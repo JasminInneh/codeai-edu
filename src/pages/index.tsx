@@ -8,10 +8,6 @@ import { motion } from 'framer-motion';
 import Contact from '../components/Contact';
 import Testimonials from '../components/Testimonials';
 
-const geistSans = GeistSans;
-
-const geistMono = GeistMono;
-
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
 
