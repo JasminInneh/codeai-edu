@@ -2,20 +2,14 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { Geist, Geist_Mono } from "next/font/google";
+import { GeistSans, GeistMono } from 'geist/font';
 import { motion } from 'framer-motion';
 import Contact from '../components/Contact';
 import Testimonials from '../components/Testimonials';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const geistSans = GeistSans;
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const geistMono = GeistMono;
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
