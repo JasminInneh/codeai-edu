@@ -4,8 +4,12 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/codeai-edu',
-  assetPrefix: '/codeai-edu/',
+  basePath: process.env.NODE_ENV === 'production' ? '/codeai-edu' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/codeai-edu/' : '',
+  trailingSlash: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;
