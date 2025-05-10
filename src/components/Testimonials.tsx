@@ -27,7 +27,7 @@ const Testimonials = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="relative py-20 px-4 sm:px-6 lg:px-8"
+      className="relative py-12 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         <div className="relative bg-[#1A1A1A] rounded-2xl overflow-hidden">

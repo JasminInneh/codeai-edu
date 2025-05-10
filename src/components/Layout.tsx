@@ -1,5 +1,6 @@
 import React from 'react';
-import Navigation from './Navigation';
+import Navbar from './Navbar';
+import Footer from './Footer';
 import { Inter } from 'next/font/google';
 
 const inter = Inter({
@@ -13,9 +14,12 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className={`min-h-screen bg-[#1A1A1A] ${inter.className}`}>
-      <Navigation />
-      {children}
+    <div className={`min-h-screen flex flex-col bg-[#1A1A1A] ${inter.className}`}>
+      <Navbar />
+      <main className="flex-grow">
+        {children}
+      </main>
+      <Footer />
     </div>
   );
 };
