@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Geist, Geist_Mono } from "next/font/google";
 import { motion } from 'framer-motion';
+import Contact from '../components/Contact';
+import Testimonials from '../components/Testimonials';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -176,6 +178,107 @@ export default function Home() {
           </div>
         </div>
       </motion.section>
+
+      {/* Courses Section */}
+      <motion.section 
+        id="courses-section"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="relative py-20 px-4 sm:px-6 lg:px-8"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="relative bg-[#1A1A1A] rounded-2xl overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute inset-0 opacity-20">
+              <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#00B4D8] rounded-full blur-3xl" />
+              <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#00B4D8] rounded-full blur-3xl" />
+            </div>
+
+            <div className="relative z-10 px-6 py-16 sm:px-12 sm:py-20 lg:px-16">
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-3xl sm:text-4xl font-bold text-white text-center mb-12"
+              >
+                Featured Courses
+              </motion.h2>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="max-w-4xl mx-auto"
+              >
+                {/* Course Card */}
+                <div className="bg-[#2A2A2A] rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                  <div className="p-6 sm:p-8">
+                    <div className="flex flex-col sm:flex-row gap-6">
+                      {/* Course Image */}
+                      <div className="w-full sm:w-1/3">
+                        <div className="aspect-video bg-[#00B4D8]/10 rounded-lg flex items-center justify-center">
+                          <svg className="w-16 h-16 text-[#00B4D8]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                      </div>
+                      
+                      {/* Course Content */}
+                      <div className="w-full sm:w-2/3">
+                        <h3 className="text-2xl font-bold text-white mb-3">
+                          Mastering GitHub Copilot
+                        </h3>
+                        <p className="text-gray-300 mb-4">
+                          Learn how to set up and effectively use GitHub Copilot to enhance your coding workflow. This comprehensive course covers everything from initial setup to advanced usage patterns.
+                        </p>
+                        <div className="flex flex-wrap gap-3 mb-6">
+                          <span className="px-3 py-1 bg-[#00B4D8]/10 text-[#00B4D8] rounded-full text-sm">
+                            Coming Soon
+                          </span>
+                          <span className="px-3 py-1 bg-[#00B4D8]/10 text-[#00B4D8] rounded-full text-sm">
+                            AI Development
+                          </span>
+                          <span className="px-3 py-1 bg-[#00B4D8]/10 text-[#00B4D8] rounded-full text-sm">
+                            Productivity
+                          </span>
+                        </div>
+                        <button className="px-6 py-3 bg-[#00B4D8] text-white rounded-lg font-medium hover:bg-[#0096B7] transition-colors duration-200">
+                          Join Waitlist
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Coming Soon Message */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  viewport={{ once: true }}
+                  className="mt-12 text-center"
+                >
+                  <p className="text-gray-400">
+                    More courses coming soon! Stay tuned for updates.
+                  </p>
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
+
+      {/* Contact Section */}
+      <Contact />
     </main>
   );
 }
