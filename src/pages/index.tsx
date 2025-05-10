@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Geist, Geist_Mono } from "next/font/google";
+import { motion } from 'framer-motion';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -100,6 +101,81 @@ export default function Home() {
           </svg>
         </div>
       </div>
+
+      {/* About Section */}
+      <motion.section 
+        id="about-section"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="relative py-20 px-4 sm:px-6 lg:px-8"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="relative bg-[#1A1A1A] rounded-2xl overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute inset-0 opacity-20">
+              <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-[#00B4D8] rounded-full blur-3xl" />
+              <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#00B4D8] rounded-full blur-3xl" />
+            </div>
+
+            <div className="relative z-10 px-6 py-16 sm:px-12 sm:py-20 lg:px-16">
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-3xl sm:text-4xl font-bold text-white text-center mb-12"
+              >
+                About CodeAI
+              </motion.h2>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="max-w-3xl mx-auto space-y-6 text-gray-300"
+              >
+                <p className="text-lg">
+                  Welcome to CodeAI, a learning platform designed to help you unlock the power of modern AI development tools like GitHub Copilot and Cursor.
+                </p>
+
+                <p className="text-lg">
+                  At its core, CodeAI is the passion project of one developer (that's me!)—a space where I combine my experience in curriculum design and tech development to share what I learn, create engaging courses, and help others master the art of building applications with AI assistance.
+                </p>
+
+                <p className="text-lg">
+                  This platform isn't just about teaching; it's about learning and growing together. As I explore the latest in AI coding tools, I'm committed to sharing insights, resources, and practical guidance to help you become a more confident, efficient, and creative developer.
+                </p>
+
+                <p className="text-lg">
+                  Whether you're curious about how Copilot can supercharge your coding workflow or how Cursor can transform your development experience, you'll find hands-on tutorials, thoughtful lessons, and a supportive learning journey here at CodeAI.
+                </p>
+
+                <p className="text-lg font-semibold text-[#00B4D8]">
+                  Let's build smarter, faster, and better—together.
+                </p>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+                className="mt-16 flex justify-center"
+              >
+                <svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M50 150 C50 100, 150 50, 200 50 C250 50, 350 100, 350 150 C350 200, 250 250, 200 250 C150 250, 50 200, 50 150" stroke="#00B4D8" strokeWidth="2" fill="none"/>
+                  <circle cx="200" cy="150" r="30" fill="#00B4D8" fillOpacity="0.2"/>
+                  <path d="M180 140 L220 140 M180 160 L220 160" stroke="#00B4D8" strokeWidth="2"/>
+                  <path d="M150 100 L250 100 M150 200 L250 200" stroke="#00B4D8" strokeWidth="2" strokeDasharray="4 4"/>
+                </svg>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
     </main>
   );
 }
